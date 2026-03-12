@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        nodejs 'nodejs'   // name from Jenkins tools
+        nodejs 'nodejs'
     }
 
     stages {
@@ -25,10 +25,15 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
+        stage('Docker Build') {
             steps {
-                echo "Deploy stage"
-                bat 'npm start'
+                bat 'docker build -t nodeapp .'
+            }
+        }
+
+        stage('Docker Run') {
+            steps {
+                bat 'docker run -d -p 3000:3000 nodeapp'
             }
         }
 
