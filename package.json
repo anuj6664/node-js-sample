@@ -6,7 +6,7 @@
 
   "scripts": {
     "start": "node index.js",
-    "test": "testing unit test in jenkins"
+    "test": "unit test passed"
   },
 
   "dependencies": {
