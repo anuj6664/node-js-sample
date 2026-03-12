@@ -6,7 +6,7 @@
 
   "scripts": {
     "start": "node index.js",
-    "test": "echo testing unit test"
+    "test": "testing unit test"
   },
 
   "dependencies": {
